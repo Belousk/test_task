@@ -24,7 +24,7 @@ class PayoutReport:
 
             for emp in employees:
                 name = emp["name"]
-                name = name[NAME_FIELD_MAX_LEN- 4] + "..." if len(name) > NAME_FIELD_MAX_LEN else name
+                name = name[:NAME_FIELD_MAX_LEN- 4] + "..." if len(name) > NAME_FIELD_MAX_LEN else name
 
                 hours = emp["hours_worked"]
                 total_hours += hours
@@ -33,14 +33,14 @@ class PayoutReport:
                 total_payout += payout
 
                 hours = str(hours)
-                hours = hours[HOURS_FIELD_MAX_LEN - 4] + "..." if len(hours) > HOURS_FIELD_MAX_LEN else hours
+                hours = hours[:HOURS_FIELD_MAX_LEN - 4] + "..." if len(hours) > HOURS_FIELD_MAX_LEN else hours
 
                 rate = str(rate)
-                rate = rate[RATE_FIELD_MAX_LEN - 4] + "..." if len(rate) > RATE_FIELD_MAX_LEN else rate
+                rate = rate[:RATE_FIELD_MAX_LEN - 4] + "..." if len(rate) > RATE_FIELD_MAX_LEN else rate
 
 
                 payout = str(payout)
-                payout = payout[PAYOUT_FIELD_MAX_LEN - 4] + "..." if len(payout) > PAYOUT_FIELD_MAX_LEN else payout
+                payout = payout[:PAYOUT_FIELD_MAX_LEN - 4] + "..." if len(payout) > PAYOUT_FIELD_MAX_LEN else payout
 
 
 
